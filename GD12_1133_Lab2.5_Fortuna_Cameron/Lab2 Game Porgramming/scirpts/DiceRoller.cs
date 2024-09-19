@@ -30,5 +30,16 @@ namespace Lab2_Game_Porgramming.scirpts.scirpt
             return previousResults; // saving the random interger to the previous result 
         }
         //Diceroler is a definition of what a something is, DoceRollerInstance is taking that definition and set a peramtor of what it is.
+
+        //+ additoin add thing to thing
+        //- subtract thing from thing
+        // / devision but doesnt include the remainder
+        // * multiplication from left to right with remainder
+        //++ increase variable by one
+        //-- decrease variable by one
+        //  %  devion with remainder from left to right
+
+
+
     }
 }
