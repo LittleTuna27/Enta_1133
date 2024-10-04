@@ -69,12 +69,12 @@ namespace Assignment_1.SCripts
             
             GameLoop();
         }
-        public void GameLoop()
+        public void GameLoop()//this functions wholl purpose is to randomize the turn order then with that result okay which sequence of turns
          {
             do
             {
-                bigTurn.TurnOrder();
-                bigTurn.WhatThatTurnDo();
+                bigTurn.TurnOrder(); //this function is calling for who rolls first
+                bigTurn.WhatThatTurnDo();//this one plays said turn order
             }
             while (roundContinue == true);
          }

@@ -22,35 +22,35 @@ namespace Assignment_1.SCripts
         internal bool whoGoFirst = true;
 
         
-        internal bool TurnOrder()
+        internal bool TurnOrder() //a function to randomly pick between who starts
         {
-            Random random = new Random();
-            if (random.Next(0, 2) == 0)
+            Random random = new Random();  //calling for a new random instance
+            if (random.Next(0, 2) == 0) //giving me a random value between 1 and 0 and if that value is 0 then set whoGoFirst to true
             {
-                Console.WriteLine($"{username} Goes First");
-                whoGoFirst = true;
+                Console.WriteLine($"{username} Goes First");// saying the player goes first
+                whoGoFirst = true;// setting boolean to true so that the when we call for WhatThatTurnDo it knows to play the sequnce where the player functions are first
             }
             else
             {
-                Console.WriteLine("Computer Goes First");
-                whoGoFirst = false;
+                Console.WriteLine("Computer Goes First");// saying the computer goes first
+                whoGoFirst = false;// setting boolean to false so that the when we call for WhatThatTurnDo it knows to play the sequnce where the computer functions are first
             }
 
-            return whoGoFirst;
+            return whoGoFirst; //returning the value to change the value of the boolean to whatever it is
         }
-            internal void WhatThatTurnDo()
+            internal void WhatThatTurnDo() //calling a sequence of functions based on who goes first
         {
 
-            if (whoGoFirst == true)
+            if (whoGoFirst == true)//if the player goes first
             {
 
                 for (int i = 0; i < totalTurns; i++) //start at zero then check if i is past turns 
                 {
-                    player.PlayerPickDice();
-                    player.PlayerDiceHas();
-                    CPU.CPUDiceSelect();
-                    CPU.CPUDiceHas();
-                    ScoreRound();
+                    player.PlayerPickDice();//getting player input on which weapon they want to use
+                    player.PlayerDiceHas();//doeing everything in said resulting choice
+                    CPU.CPUDiceSelect();//getting computers random  input on which weapon they will select
+                    CPU.CPUDiceHas();//using whatever input that is to use said gun/dice
+                    ScoreRound();//compare their scores to see who won the round
 
                 }
             }
@@ -67,8 +67,8 @@ namespace Assignment_1.SCripts
 
                 }
             }
-            ScoreCompare();
-            PlayAgain();
+            ScoreCompare();//compare the final score of the game
+            PlayAgain();//ask if they wabt to play again
         }
 
         internal void ScoreRound() //comparing the players score to the computers to see who won

@@ -25,25 +25,23 @@ namespace Assignment_1.SCripts
 
         internal string input;
 
-        // Player's own dice set
-
-        List<DiceRollerV1> playerDiceList = new List<DiceRollerV1> 
+        List<DiceRollerV1> playerDiceList = new List<DiceRollerV1>  // Player's own dice set list
         {
 
-            new DiceRollerV1(6),
-            new DiceRollerV1(8),
-            new DiceRollerV1(12),
-            new DiceRollerV1(20),
+            new DiceRollerV1(6),//six sidded dice
+            new DiceRollerV1(8),//eight sidded dice
+            new DiceRollerV1(12),//twelve sided dice
+            new DiceRollerV1(20),//twenty sided dice
 
          };
-        public void NoDice()
+        public void NoDice()//a function for if they select a unavalible dice or a imput that isnt allowed to reset the choice
         {
-            PlayerPickDice();
+            PlayerPickDice();//getting player input on which weapon they want to use
             PlayerDiceHas();        
         }
         public int PlayerPickDice()
         { 
-            if (sixSidedDiceAvalible)
+            if (sixSidedDiceAvalible)//estetic to give some visual top my weapons
             {
                 Console.WriteLine("-------------------------------------------");
                 Console.WriteLine(@"      __,_____
@@ -81,30 +79,26 @@ namespace Assignment_1.SCripts
             return playerPickDice;
             
         }
-        public int AveragePlayerRolls()
+        public int AveragePlayerRolls()//a function to check that after 4 rounds what was roughly the averadge rolls they had by deviding their final score by 4
         {
-            playerAverageResult = playerScoreTotal / 4;
-            return playerAverageResult;
-        }
-        public void RollOddEven()
+            playerAverageResult = playerScoreTotal / 4; //a varible thats result id deviding the final score by 4 being the number of rounds i could chang out that number if needed
+            return playerAverageResult;//return the result aback to call later
+        public void RollOddEven()//keep track of whether the roll was even or odd by deviding it by 2 to see if ther is a remainder
         {
-            if (playerScore % 2 == 0)
+            if (playerScore % 2 == 0)//this is taking the players score and deviding it by 2 to see if the raminder is zero since all even numbers are devisible by zerop
             {
-                playerEvenRolls++;
+                playerEvenRolls++;//if it is then increse the odd roll by one
             }
             else
              {
-                playerOddRolls++;
+                playerOddRolls++;//otherwise its odd and increase that stat to call at the end
              }
         }
-        public void PlayerDiceHas()
+        public void PlayerDiceHas()//getting player input on which weapon they want to use
         {
-
-            // checks to see the players input and then what that input was 
-
-            if (int.TryParse(input, out playerPickDice))
+            if (int.TryParse(input, out playerPickDice))//if the players input is a number from their string
             {
-                if (playerPickDice == 1 && sixSidedDiceAvalible) //if mthe players input was a one then and they havent used this dice then proced
+                if (playerPickDice == 1 && sixSidedDiceAvalible ||) //if mthe players input was a one then and they havent used this dice then proced
                 {
                     Console.WriteLine("-------------------------------------------");
                     int randomD6Roll = playerDiceList[0].RandomDiceRoll(); //rolls dice
@@ -154,7 +148,7 @@ namespace Assignment_1.SCripts
                 else
                 {
                     Console.WriteLine("You've already used this mag"); //any other input then these 4 numbers is invalid
-                    NoDice();
+                    NoDice();//calls this function too restart sqeunce
                     return;
 
                 }
@@ -162,7 +156,7 @@ namespace Assignment_1.SCripts
             else
             {
                 Console.WriteLine("You've already used this mag"); //any other input then these 4 numbers is invalid
-                NoDice();
+                NoDice();//calls this function too restart sqeunce
                 return;
 
             }
