@@ -1,3 +1,7 @@
+https://github.com/LittleTuna27/Enta_1133/tree/week_4
+
+Psuedocode
+
 Welcome the user (the name of your game)
 
 Ask them for their name
