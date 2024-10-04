@@ -83,6 +83,7 @@ namespace Assignment_1.SCripts
         {
             playerAverageResult = playerScoreTotal / 4; //a varible thats result id deviding the final score by 4 being the number of rounds i could chang out that number if needed
             return playerAverageResult;//return the result aback to call later
+        }
         public void RollOddEven()//keep track of whether the roll was even or odd by deviding it by 2 to see if ther is a remainder
         {
             if (playerScore % 2 == 0)//this is taking the players score and deviding it by 2 to see if the raminder is zero since all even numbers are devisible by zerop
@@ -98,7 +99,7 @@ namespace Assignment_1.SCripts
         {
             if (int.TryParse(input, out playerPickDice))//if the players input is a number from their string
             {
-                if (playerPickDice == 1 && sixSidedDiceAvalible ||) //if mthe players input was a one then and they havent used this dice then proced
+                if (playerPickDice == 1 && sixSidedDiceAvalible) //if mthe players input was a one then and they havent used this dice then proced
                 {
                     Console.WriteLine("-------------------------------------------");
                     int randomD6Roll = playerDiceList[0].RandomDiceRoll(); //rolls dice
