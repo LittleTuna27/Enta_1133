@@ -1,0 +1,32 @@
+Welcome the user (the name of your game)
+
+Ask them for their name
+welcome player with name
+Print the game rules, 
+start rolling 
+
+Start the game loop
+Determine starting order (randomly)
+(IfPLayerGoFirtst)
+Start first round
+get player input on dice selcetion
+random value from that roll
+display said value
+add value to total
+disable dice
+then computer repeats automatically
+compare scores to see who one
+then aword one point for that round
+start next turn until no more dice are left
+
+(IfComputerGoFirtst)
+same steps but does computer first and not player
+
+Print results of the game
+determine who one the most rounds
+Ask them if they want to play again.
+
+If they do, return to intro
+
+When they are done playing, thank them for playing
+then end code
