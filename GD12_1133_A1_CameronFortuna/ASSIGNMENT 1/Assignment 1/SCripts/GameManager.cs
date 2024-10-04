@@ -56,15 +56,17 @@ namespace Assignment_1.SCripts
                                 .'/       |
                                .:/        |
                                :/_________|");
-            Console.WriteLine("Who Are You???");
+            Console.WriteLine("Who Are You Traveller");
             bigTurn.username = Console.ReadLine();
             Console.WriteLine($"Welcome {bigTurn.username}");
             Console.WriteLine("You Will be playing against a computer in which you each pick between 4 magazines to load your gun with");
-            Console.WriteLine("But be carefure cause once you use it you lose it");
+            Console.WriteLine("But be carefull cause once you use it you lose it");
             Console.WriteLine("You each have a 6-round, 8-round, 12-round, 20-round mags");
             Console.WriteLine("Keep in mind that you if you use a mag the computer still has theirs to use");
             Console.WriteLine("Lets Get loading");
-            Console.WriteLine("-------------------------------------------");
+            Console.WriteLine(" ________________");
+            Console.WriteLine("|________________|)");
+            
             GameLoop();
         }
         public void GameLoop()
