@@ -9,12 +9,12 @@ namespace Dugneon_Movers.Scripts.dice_game
 {
     public class GameManager
     {
-        public static Player player = new Player();
+        public static Player player = new Player();//making it static so i can refrence it withou needing to make a new version of it 
         PlayerVSComputer bigTurn = new PlayerVSComputer();
         ComputerProfile CPU = new ComputerProfile();
         public static base_room_script roomScript = new base_room_script();
         internal bool roundContinue = true;
-        public bool combatStart = false;
+        public bool combatStart = false; //tried setting up a bool so if the player wasnt in combat they couldn't use there items but couldnt get it to work
        
         public void Intro() //the start of code for the intro
         {
