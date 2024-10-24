@@ -18,11 +18,13 @@ namespace Dugneon_Movers.Scripts
         public GameManager manager = new GameManager();
         public bool combatStart = false;
         public bool treasureChestOpen = true;
+        public bool runesUsed = true;
         public abstract class DungeonRoomLayout
         {
             
             public bool combatStart = false;
             public bool treasureChestOpen = true;
+            public bool runesUsed = true;
             // Every roomScript will have a description
             public string? RoomDescription { get; set; }
 
@@ -72,36 +74,44 @@ namespace Dugneon_Movers.Scripts
             public override void OnRoomSearched()
             {
                 base.OnRoomSearched();
-                Console.WriteLine("Do you step on them");//set up a chance for a heal room or a damaedge room base on what u pick
-                Console.WriteLine("1-Yes, 2-No");
-                string? heal;
-                heal = Console.ReadLine();
-                if (int.TryParse(heal, out int choice))
+                if (runesUsed)
                 {
-                    if (choice == 1)
+                    Console.WriteLine("Do you step on them");//set up a chance for a heal room or a damaedge room base on what u pick
+                    Console.WriteLine("1-Yes, 2-No");
+                    string? heal;
+                    heal = Console.ReadLine();
+                    if (int.TryParse(heal, out int choice))
                     {
-                        Random randome = new Random();
-                        step = randome.Next(0, 2);//fifty fifty choice on heal or damage
-                        switch (step)
+                        if (choice == 1)
                         {
-                            case 1:
-                                Random randoma = new Random();
-                                step = randoma.Next(0, 2);
-                                GameManager.player.currentHP += randoma.Next(1, 20);
-                                Console.WriteLine($"You healed {randoma}");
+                            Random randome = new Random();
+                            step = randome.Next(0, 2);//fifty fifty choice on heal or damage
+                            switch (step)
+                            {
+                                case 0:
+                                    Random randoma = new Random();
+                                    int healed = randoma.Next(0, 10);
+                                    GameManager.player.currentHP += healed;
+                                    Console.WriteLine($"You healed {healed}");
 
-                                break;
-                            case 2:
-                                Random random = new Random();
-                                GameManager.player.currentHP -= random.Next(1, 10);
-                                Console.WriteLine($"You healed {random}");
-                                break;
-                        };
+                                    break;
+                                case 1:
+                                    Random random = new Random();
+                                    int damadged = random.Next(0, 10);
+                                    GameManager.player.currentHP -= damadged;
+                                    Console.WriteLine($"You took {damadged} damage");
+                                    break;
+                            };
+                        }
+                        else
+                        {
+                            Console.WriteLine("That was probably for the best");
+                            Console.WriteLine("But WHOOOO KNOWSSSS");
+                        }
                     }
-                    else
-                    {
-                        Console.WriteLine("That was probably for the best");
-                        Console.WriteLine("But WHOOOO KNOWSSSS");
+                    else 
+                    { 
+                        Console.WriteLine("you've searched this room");
                     }
 
                 }
