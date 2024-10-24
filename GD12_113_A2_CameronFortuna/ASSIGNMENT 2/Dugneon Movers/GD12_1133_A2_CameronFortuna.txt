@@ -1,0 +1,64 @@
+https://github.com/LittleTuna27/Enta_1133/pull/7
+
+Psuedocode
+
+Welcome the user (the name of your game)
+
+Ask them for their name
+welcome player with game
+Print the story
+start movement
+
+
+call function to randomize rooms before looping the movement sequence
+
+loop movement should have
+
+call Onroomenter
+if it is a blank room(if not then do action of room, treasure room, combat room,etc)
+display map of location
+get players input
+check to see if it is a valid movement
+if it is move player to new room
+
+if combat room found
+Start the game loop
+Determine starting order (randomly)
+(IfPLayerGoFirtst)
+Start first round
+bring up health of Computer
+get player input on inventory selection
+check what item it is consumable or weapon
+random value from type of item in inventory selection
+remove item from inventory
+display damadage
+subtract health from Computer
+
+if treasure room was found
+
+prompt ot ask if they want to search the cheast 
+if yes set a bool to false so they cant loot the same chest
+call a function to addrandom item 4 times
+random item being a list of all items and it randomly selects a item from list to add to inventory 
+if not dont set to false so if they go back they can choose to loot it
+
+then computer repeats automatically
+sellects attack
+deals damadge to player
+bring up health of player
+if both player and computer alive loop until one is dead
+
+
+(IfComputerGoFirtst)
+same steps but does computer first and not player
+
+Print results of the game
+determine who one the most rounds
+
+
+Ask them if they want to play again.
+
+If they do, return them to movement lop but reset everything so its a new layout but keep health and items the same
+
+When they are done playing, thank them for playing
+then end code
